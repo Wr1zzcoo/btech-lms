@@ -2,6 +2,7 @@
 
 use App\Filament\User\Pages\UserLoginPage;
 use Filament\Pages\Auth\Login;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -16,3 +17,8 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::any('/user-logout', function () {
+    Auth::logout();
+    return redirect('/');
+})->name('filament.user.auth.logout');
