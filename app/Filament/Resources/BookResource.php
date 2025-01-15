@@ -71,6 +71,7 @@ class BookResource extends Resource
                 TextColumn::make('quantity'),
                 TextColumn::make('available_quantity'),
                 IconColumn::make('is_available')
+                    ->sortable()
                     ->boolean(),
             ])
             ->filters([

@@ -51,6 +51,22 @@ class BorrowTransaction extends Model
             ) {
                 $transaction->accepted_by_id = Auth::id();
                 $transaction->accepted_at = now();
+                $book = $transaction->book()->first();
+                $bookUpdates = [
+                    'available_quantity' => max($book->available_quantity - 1, 0)
+                ];
+
+                abort_if(
+                    !($book->is_available) ||
+                        $book->available_quantity == 0,
+                    404,
+                    "Book not available"
+                );
+
+                if ($book->available_quantity == 1) {
+                    $bookUpdates['is_available'] = false;
+                }
+                $book->update($bookUpdates);
             }
 
             if (
@@ -60,6 +76,16 @@ class BorrowTransaction extends Model
             ) {
                 $transaction->return_received_id = Auth::id();
                 $transaction->returned_at = now();
+
+                $book = $transaction->book()->first();
+                $bookUpdates = [
+                    'available_quantity' => min($book->available_quantity + 1, $book->quantity),
+                ];
+
+                if ($book->available_quantity == 0) {
+                    $bookUpdates['is_available'] = true;
+                }
+                $book->update($bookUpdates);
             }
         });
     }
