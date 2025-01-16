@@ -4,6 +4,7 @@ namespace App\Filament\User\Resources;
 
 use App\Filament\User\Resources\PublisherResource\Pages;
 use App\Filament\User\Resources\PublisherResource\RelationManagers;
+use App\Filament\User\Resources\PublisherResource\RelationManagers\ReviewsRelationManager;
 use App\Models\Publisher;
 use Filament\Forms;
 use Filament\Forms\Components\Section;
@@ -20,7 +21,7 @@ class PublisherResource extends Resource
 {
     protected static ?string $model = Publisher::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
     public static function form(Form $form): Form
     {
@@ -58,7 +59,7 @@ class PublisherResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            ReviewsRelationManager::class,
         ];
     }
 

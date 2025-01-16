@@ -17,8 +17,22 @@ class Review extends Model
         'reviewable_type'
     ];
 
+    public static function booted()
+    {
+        self::creating(function (Review $review) {
+            if (is_null($review->description)) {
+                $review->description = '';
+            }
+        });
+    }
+
     public function reviewable(): MorphTo
     {
         return $this->morphTo();
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

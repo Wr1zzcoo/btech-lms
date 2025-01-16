@@ -18,7 +18,7 @@ This project is a **Laravel-based Book Borrowing System** designed to manage aut
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Bibesh10/btech-lms.git
+   git clone https://github.com/Wr1zzcoo/btech-lms.git
    ```
 2. Navigate to the project directory:
    ```bash

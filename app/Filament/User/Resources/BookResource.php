@@ -4,6 +4,7 @@ namespace App\Filament\User\Resources;
 
 use App\Filament\User\Resources\BookResource\Pages;
 use App\Filament\User\Resources\BookResource\RelationManagers;
+use App\Filament\User\Resources\BookResource\RelationManagers\ReviewsRelationManager;
 use App\Models\Book;
 use Filament\Forms;
 use Filament\Forms\Components\Section;
@@ -23,7 +24,7 @@ class BookResource extends Resource
 {
     protected static ?string $model = Book::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-book-open';
 
     public static function form(Form $form): Form
     {
@@ -81,7 +82,7 @@ class BookResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            ReviewsRelationManager::class,
         ];
     }
 
