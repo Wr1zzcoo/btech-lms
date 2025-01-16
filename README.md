@@ -124,4 +124,11 @@ The project uses **Filament** to build the admin panel for managing users, books
 - URL: `/admin`
 - Use admin credentials to access the panel.
 
+## 📸 Screenshots
+
+Below is a screenshot of the application:
+
+![Admin](Screenshots/Screenshot%202025-01-16%20at%2011.05.15.png)
+![Admin](Screenshots/Screenshot%202025-01-16%20at%2011.05.29.png)
+
 ---
