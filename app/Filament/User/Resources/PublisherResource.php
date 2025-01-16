@@ -6,9 +6,12 @@ use App\Filament\User\Resources\PublisherResource\Pages;
 use App\Filament\User\Resources\PublisherResource\RelationManagers;
 use App\Models\Publisher;
 use Filament\Forms;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -23,7 +26,14 @@ class PublisherResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Section::make()
+                    ->schema([
+                        TextInput::make('name')
+                            ->required(),
+                        TextInput::make('email')
+                            ->email()
+                            ->required()
+                    ])
             ]);
     }
 
@@ -31,7 +41,8 @@ class PublisherResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('name'),
+                TextColumn::make('email'),
             ])
             ->filters([
                 //
