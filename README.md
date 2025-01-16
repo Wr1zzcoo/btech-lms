@@ -1,6 +1,6 @@
 # Laravel Book Borrowing System
 
-This project is a **Laravel-based Book Borrowing System** designed to manage authors, books, publishers, users, and borrow transactions efficiently. It implements various relationships and business logic for handling book availability and user interactions.
+This project is a **Laravel-based Library Management System** designed to manage authors, books, publishers, users, and borrow transactions efficiently. It implements various relationships and business logic for handling book availability and user interactions.
 
 ---
 
@@ -22,7 +22,7 @@ This project is a **Laravel-based Book Borrowing System** designed to manage aut
    ```
 2. Navigate to the project directory:
    ```bash
-   cd laravel-book-borrowing-system
+   cd laravel-LMS
    ```
 3. Install dependencies:
    ```bash
@@ -47,7 +47,6 @@ This project is a **Laravel-based Book Borrowing System** designed to manage aut
    ```
 
 ---
-
 
 ## 📄 Models and Relationships
 
@@ -128,7 +127,7 @@ The project uses **Filament** to build the admin panel for managing users, books
 
 Below is a screenshot of the application:
 
-![Admin](Screenshots/Screenshot%202025-01-16%20at%2011.05.15.png)
-![Admin](Screenshots/Screenshot%202025-01-16%20at%2011.05.29.png)
+![Admin](Screenshots/Admin.png)
+![Admin](Screenshots/User.png)
 
 ---
